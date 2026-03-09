@@ -14,11 +14,17 @@ const { startThingSpeakPoller } = require('./services/thingSpeakPoller');
 
 const app    = express();
 const server = http.createServer(app);
-const io     = new Server(server, {
-  cors: { origin: '*', methods: ['GET', 'POST'] }
+
+const ALLOWED_ORIGINS = [
+  'https://waste-tracker-eight.vercel.app',
+  'http://localhost:3000',
+];
+
+const io = new Server(server, {
+  cors: { origin: ALLOWED_ORIGINS, methods: ['GET', 'POST'], credentials: true }
 });
 
-app.use(cors());
+app.use(cors({ origin: ALLOWED_ORIGINS, credentials: true }));
 app.use(express.json());
 
 app.use('/api/auth',   authRoutes);
