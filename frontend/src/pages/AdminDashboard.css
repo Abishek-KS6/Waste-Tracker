@@ -1,0 +1,102 @@
+.zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+.zone-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.zone-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.zone-id { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.2rem; }
+.zone-name { font-size: 0.95rem; font-weight: 700; color: var(--text-bright); margin-bottom: 0.2rem; }
+.zone-desc { font-size: 0.72rem; color: var(--muted); }
+
+.zone-stats { display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-end; }
+.zpill { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 10px; }
+.zpill.full { background: #ff4d6d20; color: var(--red); }
+.zpill.half { background: #ffd16620; color: var(--yellow); }
+
+.zone-collector-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--surface2);
+  font-size: 0.75rem;
+}
+.zcol-label { font-family: 'DM Mono', monospace; color: var(--muted); font-size: 0.65rem; }
+.zcol-name { font-weight: 600; }
+
+.zone-bins-list { padding: 0.75rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.zbin-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  padding: 0.4rem 0.6rem; background: var(--surface2); border-radius: 6px;
+}
+.zbin-info { display: flex; align-items: center; gap: 0.4rem; flex: 1; min-width: 0; }
+.zbin-id { font-family: 'DM Mono', monospace; font-size: 0.68rem; font-weight: 700; color: var(--text-bright); flex-shrink: 0; }
+.real-tag { font-size: 0.65rem; flex-shrink: 0; }
+.zbin-loc { font-size: 0.68rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.zbin-right { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+.zbin-pct { font-family: 'DM Mono', monospace; font-size: 0.68rem; font-weight: 700; width: 32px; text-align: right; }
+
+/* ASSIGN TAB */
+.assign-section { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.assign-info { }
+.collectors-available { margin-top: 0.75rem; }
+.collector-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.collector-chip {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 0.3rem 0.8rem;
+  font-size: 0.75rem; color: var(--text);
+}
+.chip-zone { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+
+.assign-zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.assign-card { }
+.assign-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+
+.assigned-badge {
+  font-family: 'DM Mono', monospace; font-size: 0.68rem; font-weight: 700;
+  padding: 0.25rem 0.6rem; border-radius: 6px;
+}
+.unassigned-badge {
+  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  color: var(--yellow); background: #ffd16615;
+  border: 1px solid #ffd16630; padding: 0.25rem 0.6rem; border-radius: 6px;
+}
+
+.assign-controls { display: flex; gap: 0.5rem; align-items: center; }
+.assign-select {
+  flex: 1; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.6rem 0.75rem; color: var(--text);
+  font-family: 'Outfit', sans-serif; font-size: 0.82rem; outline: none;
+  transition: border-color 0.2s; cursor: pointer;
+}
+.assign-select:focus { border-color: var(--green-dim); }
+
+.unassign-btn {
+  background: transparent; border: 1px solid #ff4d6d40;
+  color: var(--red); padding: 0.6rem 0.75rem;
+  border-radius: 8px; font-size: 0.78rem; transition: all 0.2s;
+}
+.unassign-btn:hover { background: #ff4d6d15; }
+
+.assigning-msg { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; }

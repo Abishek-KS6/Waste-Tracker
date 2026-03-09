@@ -1,0 +1,14 @@
+.alert-panel { display: flex; flex-direction: column; gap: 0.5rem; }
+.alert-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: #ff4d6d10; border: 1px solid #ff4d6d40;
+  border-left: 3px solid var(--red); border-radius: 8px;
+  padding: 0.75rem 1rem; animation: slideIn 0.3s ease;
+}
+@keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.alert-icon { font-size: 1.1rem; flex-shrink: 0; }
+.alert-body { flex: 1; }
+.alert-msg { font-size: 0.85rem; font-weight: 600; color: var(--red); }
+.alert-time { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); margin-top: 0.2rem; }
+.alert-dismiss { background: transparent; border: none; color: var(--muted); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; transition: color 0.2s; flex-shrink: 0; }
+.alert-dismiss:hover { color: var(--red); }

@@ -1,0 +1,55 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.auth-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #00ff8715 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+.auth-logo { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
+.auth-title { font-size: 1.6rem; font-weight: 800; color: var(--text-bright); text-align: center; margin-bottom: 0.3rem; }
+.auth-sub { font-size: 0.85rem; color: var(--muted); text-align: center; margin-bottom: 2rem; }
+.auth-error {
+  background: #ff4d6d15; border: 1px solid #ff4d6d40;
+  color: var(--red); padding: 0.75rem 1rem; border-radius: 8px;
+  font-size: 0.82rem; margin-bottom: 1rem; font-family: 'DM Mono', monospace;
+}
+.auth-form { display: flex; flex-direction: column; gap: 1rem; }
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field label { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.field input, .field select {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.75rem 1rem;
+  color: var(--text-bright); font-size: 0.9rem; outline: none; transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { border-color: var(--green-dim); }
+.field select { cursor: pointer; }
+.auth-btn {
+  margin-top: 0.5rem; background: var(--green); color: #000;
+  border: none; border-radius: 8px; padding: 0.85rem;
+  font-size: 0.95rem; font-weight: 700; transition: opacity 0.2s, transform 0.1s;
+}
+.auth-btn:hover { opacity: 0.9; }
+.auth-btn:active { transform: scale(0.98); }
+.auth-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.auth-link { margin-top: 1.5rem; text-align: center; font-size: 0.83rem; color: var(--muted); }
+.auth-link a { color: var(--green); text-decoration: none; font-weight: 600; }

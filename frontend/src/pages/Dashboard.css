@@ -1,0 +1,80 @@
+.dashboard { min-height: 100vh; background: var(--bg); display: flex; flex-direction: column; }
+
+.dash-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem; background: var(--surface);
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 1rem;
+}
+.dash-brand { display: flex; align-items: center; gap: 0.75rem; }
+.dash-icon  { font-size: 1.8rem; }
+.dash-title { font-size: 1rem; font-weight: 800; color: var(--text-bright); display: flex; align-items: center; gap: 0.5rem; }
+.dash-subtitle { font-size: 0.72rem; color: var(--muted); font-family: 'DM Mono', monospace; }
+.dash-header-right { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+/* Role tags */
+.role-tag { font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-family: 'DM Mono', monospace; letter-spacing: 0.1em; font-weight: 700; }
+.admin-tag     { background: #00d4ff20; color: var(--teal);   border: 1px solid #00d4ff40; }
+.collector-tag { background: #ffd16620; color: var(--yellow); border: 1px solid #ffd16640; }
+.resident-tag  { background: #00ff8720; color: var(--green);  border: 1px solid #00ff8740; }
+
+/* Tabs */
+.dash-tabs {
+  display: flex;
+  gap: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+}
+.tab-btn {
+  background: transparent; border: none;
+  color: var(--muted); padding: 0.75rem 1.25rem;
+  font-size: 0.85rem; font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.tab-btn:hover  { color: var(--text); }
+.tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+
+/* Summary pills */
+.bin-summary-pills { display: flex; gap: 0.5rem; }
+.pill { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 20px; letter-spacing: 0.05em; }
+.pill.ok   { background: #00ff8715; color: var(--green);  border: 1px solid #00ff8730; }
+.pill.half { background: #ffd16615; color: var(--yellow); border: 1px solid #ffd16630; }
+.pill.full { background: #ff4d6d15; color: var(--red);    border: 1px solid #ff4d6d30; }
+
+.conn-badge { display: flex; align-items: center; gap: 0.4rem; font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; letter-spacing: 0.1em; }
+.conn-badge.live    { background: #00ff8715; color: var(--green); border: 1px solid #00ff8730; }
+.conn-badge.offline { background: #ff4d6d15; color: var(--red);   border: 1px solid #ff4d6d30; }
+.conn-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.conn-badge.live .conn-dot { animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.user-info { display: flex; flex-direction: column; align-items: flex-end; }
+.user-name { font-size: 0.85rem; font-weight: 600; color: var(--text-bright); }
+.user-role { font-size: 0.65rem; color: var(--green); font-family: 'DM Mono', monospace; text-transform: uppercase; }
+
+.logout-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.8rem; transition: all 0.2s; }
+.logout-btn:hover { border-color: var(--red); color: var(--red); }
+
+.dash-main { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.card-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.25rem; }
+
+.section-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.bins-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+
+.chart-card { min-height: 260px; }
+.last-update { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); margin-bottom: 0.75rem; }
+
+.fill-bar-outer { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.fill-bar-inner { height: 100%; border-radius: 3px; transition: width 1s ease; }
+
+@media (max-width: 768px) {
+  .dash-main { padding: 1rem; }
+  .dash-header { padding: 1rem; }
+  .bins-grid { grid-template-columns: 1fr; }
+  .bin-summary-pills { display: none; }
+}
